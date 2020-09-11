@@ -18,7 +18,7 @@ dotenv.config()
 const app: Application = express()
 const apiRoot = 'api'
 let RedisStore = require('connect-redis')(session)
-let redisClient = redis.createClient()
+let redisClient = redis.createClient(process.env.REDISCLOUD_URL!, { no_ready_check: true })
 // Redis error handling
 redisClient.on('error', (err: Error) => {
   console.log('Redis error: ', err)
