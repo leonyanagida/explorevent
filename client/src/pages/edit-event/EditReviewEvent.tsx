@@ -59,7 +59,12 @@ const EditReviewEvent = (props: any) => {
           {props.eventValues.createEventTempDownloadImg ? (
             <div className={classes.thumb}>
               <div className={classes.thumbInner}>
-                <img src={props.eventValues.createEventTempDownloadImg} className={classes.img} alt="Event Preview" />
+                <img
+                  src={props.eventValues.createEventTempDownloadImg}
+                  className={classes.img}
+                  alt="Event Preview"
+                  crossOrigin="anonymous"
+                />
               </div>
             </div>
           ) : (
@@ -70,7 +75,7 @@ const EditReviewEvent = (props: any) => {
               return (
                 <div className={classes.thumb} key={file}>
                   <div className={classes.thumbInner}>
-                    <img src={file.preview} className={classes.img} alt="Preview" />
+                    <img src={file.preview} className={classes.img} alt="Preview" crossOrigin="anonymous" />
                   </div>
                 </div>
               )

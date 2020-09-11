@@ -60,7 +60,7 @@ const ReviewEvent = (props: any) => {
           {props.eventValues.createEventImg.map((file: any) => (
             <div className={classes.thumb} key={file.name}>
               <div className={classes.thumbInner}>
-                <img src={file.preview} className={classes.img} alt="Preview" />
+                <img src={file.preview} className={classes.img} alt="Preview" crossOrigin="anonymous" />
               </div>
             </div>
           ))}

@@ -32,6 +32,7 @@
     "camelcase": "^5.3.1",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "clsx": "^1.1.1",
+    "cross-env": "^7.0.2",
     "css-loader": "3.4.2",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
@@ -87,7 +88,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "build": "cross-env INLINE_RUNTIME_CHUNK=false node scripts/build.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {

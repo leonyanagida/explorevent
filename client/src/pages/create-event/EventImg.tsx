@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button'
 import LinearProgress from '@material-ui/core/LinearProgress'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
+tf.enableProdMode()
 
 const useStylesImg = makeStyles(() => ({
   asideImg: {
@@ -195,7 +196,13 @@ const EventImg = (props: any) => {
                 return (
                   <div className={classes.thumb} key={file.name}>
                     <div className={classes.thumbInner}>
-                      <img src={file.preview} className={classes.img} ref={droppedImgRef} alt="Preview" />
+                      <img
+                        src={file.preview}
+                        className={classes.img}
+                        ref={droppedImgRef}
+                        alt="Preview"
+                        crossOrigin="anonymous"
+                      />
                     </div>
                   </div>
                 )
