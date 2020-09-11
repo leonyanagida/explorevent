@@ -157,11 +157,11 @@ export default function AuthNavbar() {
                 Account
               </Link>
             </Typography>
-            <a href="/events/create/event" className={classes.btnLink}>
+            <Link to="/events/create/event" className={classes.btnLink}>
               <Button variant="contained" className={[[classes.toolbarBtn], [classes.signupBtn]].join(' ')}>
                 Create Event
               </Button>
-            </a>
+            </Link>
             <Typography color="inherit" className={classes.toolbarBtn}>
               <Link to="/logout" className={classes.defaultLink}>
                 Logout

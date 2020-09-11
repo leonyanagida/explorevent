@@ -9,7 +9,6 @@ import mongoose from 'mongoose'
 import passport from 'passport'
 import path from 'path'
 import redis from 'redis'
-import store from 'connect-redis'
 import session from 'express-session'
 import { apiRouter } from './routes'
 import './config/passport' // Passport configuration
@@ -87,6 +86,10 @@ if (process.env.NODE_ENV === 'production') {
 app.use(`/${apiRoot}`, apiRouter)
 // Moved the app get client to the bottom of the express app
 app.get('/*', (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, '../../client', 'build/index.html'))
+})
+//The 404 Route (ALWAYS Keep this as the last route)
+app.get('*', (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, '../../client', 'build/index.html'))
 })
 
