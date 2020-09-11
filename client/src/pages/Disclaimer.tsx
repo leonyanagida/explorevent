@@ -13,7 +13,7 @@ const Disclaimer = () => {
       </p>
       <p>
         The code used to build Explorevent can be found on Leon's Github:{' '}
-        <a href="https://github.com/leonyanagida/">Link</a>
+        <a href="https://github.com/leonyanagida/explorevent">Link</a>
       </p>
     </Container>
   )
