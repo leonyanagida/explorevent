@@ -20,19 +20,21 @@ const apiRoot = 'api'
 let redisClient
 // Documentation to implement Redis found on heroku website
 if (process.env.REDISTOGO_URL) {
-  let rtg = require('url').parse(process.env.REDISTOGO_URL)
-  redisClient = require('redis').createClient(rtg.port, rtg.hostname)
-  redisClient.auth(rtg.auth.split(':')[1])
+  redisClient = require('redis').createClient({
+    port: process.env.REDIS_PORT, // replace with your port
+    host: process.env.REDIS_HOST, // replace with your hostanme or IP address
+    password: process.env.REDIS_PASS, // replace with your password
+  })
 } else {
   redisClient = require('redis').createClient()
+  // Redis error handling
+  redisClient.on('error', (err: Error) => {
+    console.log('Redis error: ', err) // For logging
+  })
+  redisClient.on('connect', () => {
+    console.log(`connected to redis`) // For logging
+  })
 }
-// Redis error handling
-redisClient.on('error', (err: Error) => {
-  console.log('Redis error: ', err) // For logging
-})
-redisClient.on('connect', () => {
-  console.log(`connected to redis`) // For logging
-})
 // Priority serve any static files.
 app.use(express.static(path.join(__dirname, '../../client/build')))
 app.use(helmet()) // Use as early as possible in application
