@@ -18,6 +18,7 @@ let RedisStore = require('connect-redis')(session)
 const app: Application = express()
 const apiRoot = 'api'
 let redisClient
+// Documentation to implement Redis found on heroku website
 if (process.env.REDISTOGO_URL) {
   let rtg = require('url').parse(process.env.REDISTOGO_URL)
   redisClient = require('redis').createClient(rtg.port, rtg.hostname)
