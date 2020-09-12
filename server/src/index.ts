@@ -19,7 +19,7 @@ const app: Application = express()
 const apiRoot = 'api'
 let redisClient
 // Documentation to implement Redis found on heroku website
-if (process.env.REDISTOGO_URL) {
+if (process.env.NODE_ENV === 'production') {
   redisClient = require('redis').createClient({
     port: process.env.REDIS_PORT, // replace with your port
     host: process.env.REDIS_HOST, // replace with your hostanme or IP address
