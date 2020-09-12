@@ -15,10 +15,16 @@ import './config/passport' // Passport configuration
 
 dotenv.config()
 
+let RedisStore = require('connect-redis')(session)
 const app: Application = express()
 const apiRoot = 'api'
-let RedisStore = require('connect-redis')(session)
-let redisClient = redis.createClient(process.env.REDISCLOUD_URL!)
+let redisClient
+if (process.env.REDISTOGO_URL) {
+  let redisURL = process.env.REDISTOGO_URL!
+  redisClient = redis.createClient(redisURL)
+} else {
+  redisClient = redis.createClient()
+}
 // Redis error handling
 redisClient.on('error', (err: Error) => {
   console.log('Redis error: ', err)
