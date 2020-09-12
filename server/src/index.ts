@@ -27,10 +27,10 @@ if (process.env.REDISTOGO_URL) {
 }
 // Redis error handling
 redisClient.on('error', (err: Error) => {
-  console.log('Redis error: ', err)
+  console.log('Redis error: ', err) // For logging
 })
 redisClient.on('connect', () => {
-  console.log(`connected to redis`)
+  console.log(`connected to redis`) // For logging
 })
 // Priority serve any static files.
 app.use(express.static(path.join(__dirname, '../../client/build')))
