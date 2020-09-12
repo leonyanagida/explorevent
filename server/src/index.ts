@@ -8,7 +8,6 @@ import helmet from 'helmet'
 import mongoose from 'mongoose'
 import passport from 'passport'
 import path from 'path'
-import redis from 'redis'
 import session from 'express-session'
 import { apiRouter } from './routes'
 import './config/passport' // Passport configuration
@@ -20,10 +19,11 @@ const app: Application = express()
 const apiRoot = 'api'
 let redisClient
 if (process.env.REDISTOGO_URL) {
-  let redisURL = process.env.REDISTOGO_URL!
-  redisClient = redis.createClient(redisURL)
+  let rtg = require('url').parse(process.env.REDISTOGO_URL)
+  redisClient = require('redis').createClient(rtg.port, rtg.hostname)
+  redisClient.auth(rtg.auth.split(':')[1])
 } else {
-  redisClient = redis.createClient()
+  redisClient = require('redis').createClient()
 }
 // Redis error handling
 redisClient.on('error', (err: Error) => {
