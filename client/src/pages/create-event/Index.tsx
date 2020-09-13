@@ -81,7 +81,6 @@ const CreateEvent = () => {
   const [isModeratingImg, setIsModeratingImg] = useState<boolean>(false)
   const [isCreateEventPublishing, setIsCreateEventPublishing] = useState<boolean>(false)
 
-  // This is to properly format the images so we can preview it
   useEffect(
     () => () => {
       // Make sure to revoke the data uris to avoid memory leaks

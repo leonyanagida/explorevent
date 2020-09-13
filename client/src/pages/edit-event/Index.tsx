@@ -176,7 +176,6 @@ const EditEvent = () => {
     }
   }, [eventData])
 
-  // This is to properly format the images so we can preview it
   useEffect(
     () => () => {
       // Make sure to revoke the data uris to avoid memory leaks

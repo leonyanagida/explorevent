@@ -88,7 +88,6 @@ const EditEventImg = (props: {
 
   // For removing the img
   const removeImg = () => {
-    console.log('preview remove ', props.eventValues.createEventImg[0].preview)
     // Change all the image settings back to the default states
     setLocalTempImg([])
     props.onCreateEventImgChange([])
@@ -217,13 +216,11 @@ const EditEventImg = (props: {
                 </aside>
               ) : (
                 <>
-                  {console.log('rops evenmt values ', props.eventValues.createEventImg)}
                   {(localTempImg.length > 0 || props.eventValues.createEventImg.length > 0) &&
                     !props.eventValues.createEventImg.includes('') &&
                     props.eventValues.createEventImg[0].preview !== '' && (
                       <aside className={classes.asideImg}>
                         {props.eventValues.createEventImg.map((file: any) => {
-                          console.log('file preview', file)
                           return (
                             <div className={classes.thumb} key={file.name}>
                               <div className={classes.thumbInner}>

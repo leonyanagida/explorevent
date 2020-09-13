@@ -75,7 +75,7 @@ const EditReviewEvent = (props: any) => {
               return (
                 <div className={classes.thumb} key={file}>
                   <div className={classes.thumbInner}>
-                    <img src={file.preview} className={classes.img} alt="Preview" crossOrigin="anonymous" />
+                    <img src={file.preview} className={classes.img} alt="Preview" />
                   </div>
                 </div>
               )
