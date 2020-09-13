@@ -24,7 +24,7 @@ describe('Comment Controller', () => {
     newUser = await UserController.CreateNewUser({
       email: 'commentuser@email.com',
       fullName: 'Comment User',
-      password: '123456',
+      password: 'AStrongPassword000~',
       username: 'commentuser',
     })
     // Create a new event to leave comments on
@@ -35,8 +35,8 @@ describe('Comment Controller', () => {
       eventZip: '',
       eventStartDate: '2022-01-01',
       eventEndDate: '2022-01-01',
-      eventStartTime: "15:40",
-      eventEndTime: "15:40",
+      eventStartTime: '15:40',
+      eventEndTime: '15:40',
       online: true,
       eventName: 'Test Event For Comments',
       creatorId: newUser._id,

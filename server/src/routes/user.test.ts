@@ -25,7 +25,7 @@ describe('User Route', () => {
     let newUser = {
       email: 'John@email.com',
       fullName: 'John Smith',
-      password: '12445676',
+      password: faker.internet.password(),
       username: 'johnsmith',
     }
     const createNewUserRoute = await req.post('/api/users/signup').send(newUser)
@@ -36,7 +36,7 @@ describe('User Route', () => {
     let newUser = {
       email: 'loginmein@email.com',
       fullName: 'LogMe In',
-      password: '12445676',
+      password: faker.internet.password(),
       username: 'loginmein',
     }
     const createNewUserRoute = await req.post('/api/users/signup').send(newUser)
@@ -66,7 +66,7 @@ describe('User Route', () => {
     let newUser = {
       email: faker.internet.email(),
       fullName: faker.name.findName(),
-      password: '1234',
+      password: faker.internet.password(),
       username: 'findme',
     }
     // Sign up the new user
@@ -166,8 +166,8 @@ describe('User Route', () => {
         eventZip: '',
         eventStartDate: '2022-01-01',
         eventEndDate: '2022-01-01',
-        eventStartTime: "15:40",
-        eventEndTime: "15:40",
+        eventStartTime: '15:40',
+        eventEndTime: '15:40',
         online: true,
         eventName: 'Test Event',
         creatorId: createNewUserRoute.id,
@@ -263,7 +263,7 @@ describe('User Route', () => {
     let newUser = {
       email: 'newwuser@email.com',
       fullName: 'Change Me',
-      password: faker.internet.password(),
+      password: 'AStrongPassword000-~!',
       username: 'newuser2',
     }
     // Sign up user
@@ -323,7 +323,7 @@ describe('User Route', () => {
     let newUser = {
       email: faker.internet.email(),
       fullName: faker.name.findName(),
-      password: '123456789',
+      password: faker.internet.password(),
       username: faker.name.firstName() + faker.random.word(),
     }
     // Sign up user
@@ -339,7 +339,7 @@ describe('User Route', () => {
     expect(userLogin.status).toBe(200)
     // Edit the about, fullname and username
     const editUser = await agent.post('/api/users/edit/password').send({
-      password: '987654321',
+      password: faker.internet.password(),
       userId: createNewUserRoute.id,
     })
     expect(editUser.status).toBe(200)

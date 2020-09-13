@@ -28,7 +28,7 @@ describe('User controller', () => {
   it('User controller - Should create a new user', async () => {
     const testEmail = 'text@example.com'
     const testFullName = 'Text Example'
-    const testPassword = '123456'
+    const testPassword = 'AStrongPassword000~'
     const testUsername = 'textexample'
     const newUser = await UserController.CreateNewUser({
       email: testEmail,

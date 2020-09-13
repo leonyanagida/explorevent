@@ -1,4 +1,4 @@
-import express, { Application, Response, Request, NextFunction, response } from 'express'
+import express, { Application, Response, Request } from 'express'
 import compression from 'compression'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
@@ -49,7 +49,11 @@ if (process.env.NODE_ENV === 'production') {
     useUnifiedTopology: true,
   })
 }
-app.use(helmet()) // Use as early as possible in application
+app.use(
+  helmet({
+    contentSecurityPolicy: false, //  Fixes issue with "Refused to load the script...Content Security Policy..."
+  })
+) // Use as early as possible in application
 app.use(cookieParser())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })) // Body-parser is built into express
@@ -73,13 +77,6 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(cors())
   app.use(errorhandler())
 }
-app.all('*', (req: Request, res: Response, next: NextFunction) => {
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Credentials', 'true')
-  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS')
-  res.header('Access-Control-Allow-Headers', 'Content-Type')
-  next()
-})
 // Priority serve any static files.
 app.use(express.static(path.join(__dirname, '../../client/build')))
 //========================================== //

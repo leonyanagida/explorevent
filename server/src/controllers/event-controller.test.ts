@@ -21,7 +21,7 @@ describe('Event Controller', () => {
     req = await request(app)
     const testEmail = 'imleon@email.com'
     const testFullName = 'Leon Hello'
-    const testPassword = '123456'
+    const testPassword = 'AStrongPassword000~'
     const testUsername = 'imleon'
     // Create new user before tests run
     newUser = await UserController.CreateNewUser({

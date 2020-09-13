@@ -27,7 +27,7 @@ describe('Event Route', () => {
     let newUser = {
       email: faker.internet.email(),
       fullName: faker.name.findName(),
-      password: '1234',
+      password: faker.internet.password(),
       username: 'findme2',
     }
     // Sign up the new user
@@ -68,7 +68,7 @@ describe('Event Route', () => {
     let newUser = {
       email: faker.internet.email(),
       fullName: faker.name.findName(),
-      password: '1234',
+      password: faker.internet.password(),
       username: 'findme2',
     }
     // Sign up the new user
@@ -122,7 +122,7 @@ describe('Event Route', () => {
     let newUser = {
       email: faker.internet.email(),
       fullName: faker.name.findName(),
-      password: '1234',
+      password: faker.internet.password(),
       username: 'findme2',
     }
     // Sign up the new user
@@ -167,7 +167,7 @@ describe('Event Route', () => {
     let newUser2 = {
       email: faker.internet.email(),
       fullName: faker.name.findName(),
-      password: '1234',
+      password: faker.internet.password(),
       username: 'canteditcomment',
     }
     // Sign up the new user
@@ -197,7 +197,7 @@ describe('Event Route', () => {
     let newUser = {
       email: 'deletecomment1@email.com',
       fullName: faker.name.findName(),
-      password: '1234',
+      password: faker.internet.password(),
       username: 'deletecomment1',
     }
     // Sign up the new user
@@ -280,7 +280,7 @@ describe('Event Route', () => {
     let newUser1 = {
       email: 'commenterdeleter@email.com',
       fullName: faker.name.findName(),
-      password: '1234',
+      password: faker.internet.password(),
       username: 'commenterdeleter',
     }
     // Sign up the new user
@@ -326,7 +326,7 @@ describe('Event Route', () => {
     let newUser2 = {
       email: 'commentdeleter2@email.com',
       fullName: faker.name.findName(),
-      password: '1234',
+      password: faker.internet.password(),
       username: 'commentdeleter2',
     }
     // Sign up the new user
@@ -391,7 +391,7 @@ describe('Event Route', () => {
     let newUser1 = {
       email: 'usercommentliker@email.com',
       fullName: faker.name.findName(),
-      password: '1234',
+      password: faker.internet.password(),
       username: 'commentdeleter2',
     }
     // Sign up the new user
@@ -437,7 +437,7 @@ describe('Event Route', () => {
     let newUser2 = {
       email: 'usercommentanotheruser@email.com',
       fullName: faker.name.findName(),
-      password: '1234',
+      password: faker.internet.password(),
       username: 'usercommentanotheruser',
     }
     // Sign up the new user

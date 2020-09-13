@@ -197,7 +197,7 @@ describe('Event Route', () => {
     let newUser = {
       email: faker.internet.email(),
       fullName: faker.name.findName(),
-      password: faker.internet.password(),
+      password: 'AStrongPasword00~!',
       username: faker.name.firstName() + faker.random.word(),
     }
     // Sign up the new user
@@ -250,7 +250,7 @@ describe('Event Route', () => {
     let newUser = {
       email: faker.internet.email(),
       fullName: faker.name.findName(),
-      password: faker.internet.password(),
+      password: 'AStrongPasword00~!',
       username: faker.name.firstName() + faker.random.word(),
     }
     // Sign up the new user
