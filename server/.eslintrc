@@ -1,0 +1,23 @@
+{
+  "extends": ["standard", "prettier"],
+  "parser": "babel-eslint",
+  "env": {
+    "jest": true,
+    "node": true,
+    "mongo": true
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "no-console": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto",
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 120,
+        "tabWidth": 2
+      }
+    ]
+  }
+}
