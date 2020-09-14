@@ -23,6 +23,7 @@ const eventCardStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
+    visibility: 'visible',
   },
   expand: {
     transform: 'rotate(0deg)',

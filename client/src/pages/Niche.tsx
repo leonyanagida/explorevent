@@ -15,6 +15,7 @@ const nicheStyles = makeStyles((theme) => ({
     marginTop: '5em',
     maxHeight: '30em',
     width: '50%',
+    visibility: 'visible',
     [theme.breakpoints.down('sm')]: {
       marginTop: '1em',
       width: '100%',
