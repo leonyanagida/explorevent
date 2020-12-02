@@ -1,4 +1,4 @@
 declare module 'multer-dropbox' {
-  const multerDbx: functioon
+  const multerDbx: function
   export default multerDbx
 }
