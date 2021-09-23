@@ -127,7 +127,7 @@ const EventComment = ({
         <p className={classes.userName}>
           <Link to={`/profiles/${commentCreatorId}`}>{commentCreatorUsername}</Link>
         </p>
-        <p className={classes.userDate}>{commentCreatedAt ? commentCreatedAt : 'some time ago...'}</p>
+        <p className={classes.userDate}>{commentCreatedAt ? commentCreatedAt.split('T')[0] : 'some time ago...'}</p>
       </div>
       <p className={classes.userComment}>{commentText}</p>
       <div>

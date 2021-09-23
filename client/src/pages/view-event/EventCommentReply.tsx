@@ -197,7 +197,9 @@ const EventCommentReply = (props: {
         <p className={classes.userName}>
           <Link to={`/profiles/${props.commentCreatorId}`}>{props.commentCreatorUsername}</Link>
         </p>
-        <p className={classes.userDate}>{props.commentCreatedAt ? props.commentCreatedAt : 'some time ago...'}</p>
+        <p className={classes.userDate}>
+          {props.commentCreatedAt ? props.commentCreatedAt.split('T')[0] : 'some time ago...'}
+        </p>
       </div>
       <div className={classes.userCommentDeleteContainer}>
         <p className={classes.userComment}>

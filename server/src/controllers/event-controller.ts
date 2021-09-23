@@ -292,7 +292,7 @@ async function DeleteAllUserEventsById(userId: string): Promise<IEvent | null> {
 
 async function DeleteEventComment({ commentId, eventId }: { commentId: string; eventId: string }) {
   return new Promise((resolve, reject) => {
-    Event.findById(eventId, { eventComments: commentId }, (err, event) => {
+    Event.findById(eventId, (err, event) => {
       let eventArr = event?.eventComments
       // Remove the commentId from the eventArr
       for (let i = eventArr.length - 1; i >= 0; --i) {
@@ -317,7 +317,7 @@ async function DeleteEventComment({ commentId, eventId }: { commentId: string; e
 
 async function ToggleEventAttend({ eventId, userId }: { eventId: string; userId: string }): Promise<IEvent | null> {
   return new Promise((resolve, reject) => {
-    Event.findById(eventId, { usersAttending: userId }, (err, event) => {
+    Event.findById(eventId, (err, event) => {
       // Check if the usersAttending array contains the user that is toggling the attend/unattend button
       if (event?.usersAttending.includes(userId)) {
         // If the userId is already in the array, filter and remove the user to "unattend" the user from the event
@@ -355,7 +355,7 @@ async function ToggleEventAttend({ eventId, userId }: { eventId: string; userId:
 
 async function ToggleEventLike({ eventId, userId }: { eventId: string; userId: string }): Promise<IEvent | null> {
   return new Promise((resolve, reject) => {
-    Event.findById(eventId, { eventLikes: userId }, (err, event) => {
+    Event.findById(eventId, (err, event) => {
       if (event?.eventLikes.includes(userId)) {
         // If the userId is already in the array, filter and remove the user to "unattend" the user from the event
         const filterEventLikes = event?.eventLikes.filter((id: any) => {
