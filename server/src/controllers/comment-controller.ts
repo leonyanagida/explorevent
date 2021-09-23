@@ -180,7 +180,7 @@ async function ToggleCommentLike({
   userId: string
 }): Promise<IComment | null> {
   return new Promise((resolve, reject) => {
-    Comment.findById(commentId, { commentLikes: userId }, (err, comment) => {
+    Comment.findById(commentId, (err, comment) => {
       if (comment?.commentLikes.includes(userId)) {
         // If the userId is already in the array, filter and remove the user to "unattend" the user from the event
         const filterCommentLikes = comment?.commentLikes.filter((id: any) => {

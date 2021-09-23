@@ -195,7 +195,14 @@ const EventInputCommentReply = (props: any) => {
                       commentText={reply.comment.text}
                       commentEventId={reply.comment.eventId}
                       commentLikes={reply.comment.commentLikes}
-                      onEventCommentReplyDelete={(value: any) => deleteAndFilterEventComments(value)}
+                      onEventCommentReplyDelete={(value: any) =>
+                        deleteAndFilterEventComments({
+                          creatorId: reply.comment.creatorId,
+                          commentId: reply.comment._id,
+                          eventId: reply.comment.eventId,
+                          userId: user.id,
+                        })
+                      }
                     />
                   </div>
                 )
