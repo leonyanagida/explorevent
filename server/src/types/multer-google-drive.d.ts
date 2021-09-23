@@ -1,4 +1,4 @@
 declare module 'multer-google-drive' {
-  const GoogleDriveStorage: functioon
+  const GoogleDriveStorage: function
   export default GoogleDriveStorage
 }
