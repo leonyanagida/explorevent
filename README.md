@@ -6,8 +6,6 @@
   Host or Attend Free Events
 </p>
 
-### Live Website: [Explorevent](https://explorevent.herokuapp.com/)
-
 Explorevent is a full-stack web application built using React, Node/Express, and MongoDB. The purpose of this application is to be able to create online or in-person events for people to attend. Users are also able to search and view events created by other people by using the search bar.
 
 Note: This is only a **personal project** built to apply the skills that I have learned.
